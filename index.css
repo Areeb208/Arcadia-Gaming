@@ -122,12 +122,20 @@
     transition: all 0.3s ease-in-out;
     max-width: 390px;
     margin: auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Same sizes */
+    min-height: 420px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 
 .players:hover {
     box-shadow: 0 4px 12px var(--color-hover);
-    transform: translateY(-10px);
+    transform: scale(1.03);
 }
 
 .players h2 {
