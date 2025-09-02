@@ -36,6 +36,7 @@ img {
   color: var(--color-text);
   padding: 0 2rem;
   height: auto;
+  border-bottom: 3px solid var(--color-hover);
 }
 
 .navbar .logo a {
@@ -57,19 +58,36 @@ img {
 }
 
 .navbar .list li a {
+  position: relative;
   display: inline-block;
   height: 100%;
   text-decoration: none;
   color: var(--color-text);
-  line-height: 2.5rem;
+  line-height: 2.6rem;
   padding: 0 6px;
-  border-bottom: 4.9px solid transparent;
+  border-bottom: 4px solid transparent;
+  transition: border-bottom 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.navbar .list li a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(255, 0, 128, 0.2) 0%, rgba(18, 18, 18, 1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.navbar .list li a:hover::before {
+  opacity: 1;
 }
 
 .navbar .list li a:hover {
-  background: linear-gradient(to top, rgba(255, 0, 128, 0.2)0%, rgba(18, 18, 18, 1)100%);
-  border-bottom: 4.9px solid rgba(255, 0, 128, 0.5);
+  border-bottom: 4.9px solid var(--color-hover);
 }
+
 
 .navbar .btn a {
   font-family: var(--font-heading);
