@@ -1,0 +1,228 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+}
+
+:root {
+  --color-bg: #121212;
+  --color-primary: #8A2BE2;
+  --color-secondary: #00FFFF;
+  --color-text: #EAEAEA;
+  --color-text-muted: #AAAAAA;
+  --color-hover: #FF0080;
+
+  /* Fonts */
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  padding: 0 2rem;
+  height: auto;
+  border-bottom: 3px solid var(--color-hover);
+}
+
+.navbar .logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar .logo .logo-img {
+  height: 3rem;
+}
+
+.navbar .list {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  list-style: none;
+  display: flex;
+  gap: 1.6rem;
+}
+
+.navbar .list li a {
+  position: relative;
+  display: inline-block;
+  height: 100%;
+  text-decoration: none;
+  color: var(--color-text);
+  line-height: 2.6rem;
+  padding: 0 6px;
+  border-bottom: 4px solid transparent;
+  transition: border-bottom 0.3s ease-in-out;
+  z-index: 0;
+}
+
+.navbar .list li a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(255, 0, 128, 0.2) 0%, rgba(18, 18, 18, 1) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.navbar .list li a:hover::before {
+  opacity: 1;
+}
+
+.navbar .list li a:hover {
+  border-bottom: 4.9px solid var(--color-hover);
+}
+
+
+.navbar .btn a {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  text-decoration: none;
+  color: var(--color-text);
+  display: inline-block;
+  border: 1px solid rgb(172, 9, 90);
+  border-radius: 999px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.navbar .btn a:hover {
+  background-color: rgba(255, 0, 128, 0.3);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .navbar .list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.8rem;
+    font-size: 16px;
+  }
+
+  .navbar .btn {
+    margin-top: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .logo .logo-img {
+    height: 2.5rem;
+  }
+
+  .navbar .list {
+    font-size: 14px;
+    gap: 0.6rem;
+  }
+
+  .navbar .btn a {
+    font-size: 16px;
+    padding: 4px 10px;
+  }
+}
+
+/* Footer */
+.footer {
+  background: var(--color-bg);
+  border-top: 2px solid var(--color-hover);
+  padding: 2rem 1rem;
+  font-family: var(--font-body);
+  color: var(--color-text);
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.footer-brand h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--color-hover);
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.footer-links a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-hover);
+  text-shadow: 0 0 8px var(--color-hover);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.footer-socials a {
+  color: var(--color-text);
+  font-size: 1.5rem;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Social hover colors */
+.footer-socials a[aria-label="Discord"]:hover {
+  color: #5865F2;
+  text-shadow: 0 0 10px #5865F2;
+}
+
+.footer-socials a[aria-label="Twitter"]:hover {
+  color: #1DA1F2;
+  text-shadow: 0 0 10px #1DA1F2;
+}
+
+.footer-socials a[aria-label="YouTube"]:hover {
+  color: #FF0000;
+  text-shadow: 0 0 10px #FF0000;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 2rem;
+  padding-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
